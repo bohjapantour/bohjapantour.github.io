@@ -382,9 +382,21 @@ document.getElementById("modal").style.display="none"
 
 function setLang(lang){
 
+if(lang==="en"){
+
+document.getElementById("aboutTitle").innerText="About the Orchestra"
+
+document.getElementById("aboutText").innerText=
+"The BOH Hamburg Orchestra is a wind orchestra from Hamburg, Germany. The ensemble consists of musicians performing on a wide range of wind instruments. The orchestra regularly performs concerts in Hamburg and other cities throughout Germany as well as internationally. Its repertoire includes classical arrangements, symphonic wind music, film music and contemporary compositions. The ensemble is actively involved in cultural exchange projects and international concert tours."
+
+}
+
 if(lang==="de"){
 
 document.getElementById("aboutTitle").innerText="Über das Orchester"
+
+document.getElementById("aboutText").innerText=
+"Das BOH Hamburg Orchestra ist ein Blasorchester aus Hamburg. Das Ensemble besteht aus Musikerinnen und Musikern, die auf verschiedenen Blasinstrumenten spielen. Das Orchester tritt regelmäßig in Hamburg sowie in anderen Städten Deutschlands und auch international auf. Das Repertoire umfasst klassische Bearbeitungen, sinfonische Blasmusik, Filmmusik und moderne Kompositionen."
 
 }
 
@@ -392,16 +404,12 @@ if(lang==="jp"){
 
 document.getElementById("aboutTitle").innerText="オーケストラについて"
 
-}
-
-if(lang==="en"){
-
-document.getElementById("aboutTitle").innerText="About the Orchestra"
+document.getElementById("aboutText").innerText=
+"BOH Hamburg Orchestraはドイツ・ハンブルクの吹奏楽団です。様々な管楽器を演奏する音楽家で構成されています。ハンブルクを中心にドイツ国内や海外でも演奏活動を行っています。クラシック編曲、映画音楽、現代作品など幅広いレパートリーを持っています。"
 
 }
 
 }
-
 </script>
 
 </body>
