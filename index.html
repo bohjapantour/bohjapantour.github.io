@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
@@ -14,11 +13,10 @@ body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
 color:#333;
-
 background:
 linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
 url("https://www.transparenttextures.com/patterns/rice-paper.png");
-
+overflow-x:hidden;
 }
 
 /* HERO */
@@ -27,16 +25,16 @@ url("https://www.transparenttextures.com/patterns/rice-paper.png");
 background:
 linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
 url("https://images.unsplash.com/photo-1507838153414-b4b713384a76");
-
 background-size:cover;
 background-position:center;
 color:white;
 text-align:center;
-padding:150px 20px;
+padding:160px 20px;
+position:relative;
 }
 
 .hero h1{
-font-size:50px;
+font-size:52px;
 margin:0;
 }
 
@@ -54,7 +52,6 @@ right:20px;
 }
 
 .lang button{
-background:white;
 border:none;
 padding:6px 10px;
 margin-left:5px;
@@ -69,7 +66,7 @@ margin:auto;
 padding:40px 25px;
 }
 
-/* CARDS */
+/* CARD */
 
 .card{
 background:rgba(255,255,255,0.9);
@@ -100,16 +97,14 @@ margin-top:15px;
 background:#b51f1f;
 }
 
+/* QR */
+
 .qr img{
 width:200px;
 margin-top:20px;
 }
 
 /* VIDEO */
-
-.video{
-text-align:center;
-}
 
 .video iframe{
 width:100%;
@@ -118,7 +113,7 @@ height:360px;
 border-radius:8px;
 }
 
-/* TOUR GRID */
+/* TOUR */
 
 .tour{
 display:grid;
@@ -135,15 +130,52 @@ text-align:center;
 font-weight:bold;
 }
 
-/* MAP */
+/* PROGRESS BAR */
 
-.map{
-text-align:center;
+.progress{
+width:100%;
+background:#eee;
+border-radius:20px;
+overflow:hidden;
+margin-top:20px;
 }
 
-.map img{
+.progress-bar{
+height:20px;
+width:35%;
+background:#d62828;
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+}
+
+.gallery img{
 width:100%;
-max-width:700px;
+border-radius:8px;
+}
+
+/* SAKURA */
+
+.sakura{
+position:fixed;
+top:-10px;
+font-size:20px;
+animation:fall linear infinite;
+opacity:0.8;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-10vh) rotate(0deg);
+}
+100%{
+transform:translateY(110vh) rotate(360deg);
+}
 }
 
 /* FOOTER */
@@ -162,14 +194,14 @@ margin-top:50px;
 
 <body>
 
+<!-- HERO -->
+
 <div class="hero">
 
 <div class="lang">
-
 <button onclick="setLang('en')">EN</button>
 <button onclick="setLang('de')">DE</button>
 <button onclick="setLang('jp')">日本語</button>
-
 </div>
 
 <h1>BOH Hamburg Orchestra</h1>
@@ -180,10 +212,17 @@ margin-top:50px;
 
 <div class="container">
 
+<!-- ABOUT -->
 
 <div class="card">
 
-<h2 data-en="About the Tour" data-de="Über die Reise" data-jp="ツアーについて">About the Tour</h2>
+<h2 data-en="About the Tour"
+data-de="Über die Reise"
+data-jp="ツアーについて">
+
+About the Tour
+
+</h2>
 
 <p data-en="In October 2026 the BOH Hamburg Orchestra will travel to Japan for an international cultural exchange and concert tour."
 data-de="Im Oktober 2026 reist das Blasorchester Hamburg nach Japan zu einem internationalen Konzert- und Austauschprogramm."
@@ -193,31 +232,34 @@ In October 2026 the BOH Hamburg Orchestra will travel to Japan for an internatio
 
 </p>
 
-<p data-en="Young musicians from Germany and Japan will rehearse together, perform concerts and experience each other's culture."
-data-de="Deutsche und japanische Jugendliche werden gemeinsam proben, Konzerte spielen und ihre Kulturen kennenlernen."
-data-jp="ドイツと日本の若い音楽家たちは共に演奏し、互いの文化を体験します。">
-
-Young musicians from Germany and Japan will rehearse together, perform concerts and experience each other's culture.
-
-</p>
-
 </div>
 
 
+<!-- DONATE -->
 
 <div class="card donate">
 
 <h2>Support the Tour</h2>
 
 <p>
-To make this tour possible we are raising funds for travel, instrument transport and concert organisation.
+To make this tour possible we are raising funds for travel, instruments and concerts.
 </p>
 
 <a class="button"
 href="https://gofund.me/d0fefb572"
 target="_blank">
+
 Donate via GoFundMe
+
 </a>
+
+<div class="progress">
+
+<div class="progress-bar"></div>
+
+</div>
+
+<p>Fundraising progress</p>
 
 <div class="qr">
 
@@ -230,6 +272,7 @@ Donate via GoFundMe
 </div>
 
 
+<!-- VIDEO -->
 
 <div class="card video">
 
@@ -244,6 +287,7 @@ allowfullscreen>
 </div>
 
 
+<!-- TOUR -->
 
 <div class="card">
 
@@ -262,14 +306,20 @@ allowfullscreen>
 </div>
 
 
+<!-- GALLERY -->
 
-<div class="card map">
+<div class="card">
 
-<h2>Journey</h2>
+<h2>Orchestra</h2>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/World_map_blank_without_borders.svg">
+<div class="gallery">
 
-<p>Hamburg → Tokyo → Chiba → Ichikawa</p>
+<img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6">
+<img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d">
+<img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76">
+<img src="https://images.unsplash.com/photo-1464375117522-1311dd6d0cd6">
+
+</div>
 
 </div>
 
@@ -286,11 +336,27 @@ BOH Hamburg Orchestra – Japan Tour 2026
 
 <script>
 
-function setLang(lang){
+/* LANGUAGE SWITCH */
 
+function setLang(lang){
 document.querySelectorAll("[data-en]").forEach(el=>{
 el.innerText = el.dataset[lang];
 });
+}
+
+/* SAKURA ANIMATION */
+
+for(let i=0;i<20;i++){
+
+let sakura=document.createElement("div");
+sakura.className="sakura";
+sakura.innerHTML="🌸";
+
+sakura.style.left=Math.random()*100+"vw";
+sakura.style.animationDuration=(5+Math.random()*10)+"s";
+sakura.style.fontSize=(10+Math.random()*20)+"px";
+
+document.body.appendChild(sakura);
 
 }
 
