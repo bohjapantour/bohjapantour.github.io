@@ -244,7 +244,14 @@ The ensemble regularly performs concerts in Hamburg and other cities across Germ
 
 <h2>Support the Tour</h2>
 
-<div style="display:flex;gap:40px;flex-wrap:wrap;align-items:flex-start">
+<div style="
+display:grid;
+grid-template-columns: repeat(3, 1fr);
+gap:40px;
+align-items:start;
+">
+
+<!-- Column 1: Donate -->
 
 <div>
 
@@ -254,17 +261,32 @@ target="_blank">
 Donate via GoFundMe
 </a>
 
-<p>Scan the QR code</p>
-
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://gofund.me/d0fefb572">
+<p style="margin-top:15px;">
+Support the Japan Tour 2026
+</p>
 
 </div>
+
+<!-- Column 2: QR -->
+
+<div>
+
+<p>Scan the QR code</p>
+
+<img
+src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://gofund.me/d0fefb572"
+style="max-width:200px;"
+>
+
+</div>
+
+<!-- Column 3: Video -->
 
 <div>
 
 <iframe
-width="420"
-height="240"
+width="100%"
+height="200"
 src="https://www.youtube-nocookie.com/embed/DlcSEWRRmtA"
 title="BOH Hamburg Orchestra"
 allowfullscreen>
