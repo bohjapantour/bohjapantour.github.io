@@ -1,274 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>BOH Hamburg Orchestra – Japan Tour 2026</title>
 
 <style>
 
-/* BODY */
-
 body{
-
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-color:#eee;
-
-background:#121212;
-
+background:#0e0e0e;
+color:white;
 }
 
 /* HERO */
 
 .hero{
-
 position:relative;
+height:420px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+overflow:hidden;
+
+/* нотна петолиния */
 
 background:
-
-linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-
+linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
 url("https://upload.wikimedia.org/wikipedia/commons/0/0b/Sheet_music_background.jpg");
 
 background-size:cover;
-
-padding:160px 20px;
-
-text-align:center;
-
-overflow:hidden;
-
+background-position:center;
 }
 
-/* JAPANESE SUN */
+/* японско слънце */
 
 .sun{
-
 position:absolute;
-
-top:40px;
-left:50%;
-
-width:260px;
-height:260px;
-
+width:300px;
+height:300px;
 background:#BC002D;
-
 border-radius:50%;
-
+top:60px;
+left:50%;
 transform:translateX(-50%);
-
 opacity:0.45;
-
 }
 
-/* SAKURA */
+/* сакура */
 
 .sakura{
-
 position:absolute;
-
-width:12px;
-height:12px;
-
-background:#F6C6D3;
-
+width:10px;
+height:10px;
+background:#f6c6d3;
 border-radius:50%;
-
-opacity:0.7;
-
-animation:fall 10s linear infinite;
-
+opacity:0.8;
+animation:fall linear infinite;
 }
 
 @keyframes fall{
-
-0%{transform:translateY(-100px)}
-100%{transform:translateY(900px)}
-
+0%{transform:translateY(-50px)}
+100%{transform:translateY(600px)}
 }
 
 .hero h1{
-
-font-size:56px;
+font-size:58px;
+z-index:2;
 margin:0;
-position:relative;
-
 }
 
 .hero p{
-
 font-size:22px;
-position:relative;
-
+z-index:2;
 }
 
-/* LANGUAGE */
+/* language */
 
 .lang{
-
 position:absolute;
 top:20px;
 right:20px;
-
+z-index:3;
 }
 
 .lang button{
-
 background:#BC002D;
 border:none;
 color:white;
 padding:6px 12px;
-margin-left:5px;
+margin-left:6px;
 cursor:pointer;
-
 }
 
-/* CONTAINER */
+/* container */
 
 .container{
-
-max-width:1300px;
+max-width:1200px;
 margin:auto;
 padding:40px;
-
 }
 
-/* CARDS */
+/* cards */
 
 .card{
-
-background:rgba(0,0,0,0.65);
-
+background:#111;
 padding:35px;
-margin-bottom:35px;
-
+margin-bottom:30px;
 border-radius:10px;
-
 }
 
-/* SECOND COLOR */
-
-h2{
-
-color:#F6C6D3;
-
-}
-
-/* BUTTON */
+/* donate */
 
 .button{
-
 background:#BC002D;
-color:white;
-
-padding:14px 28px;
-
-border-radius:6px;
-
-text-decoration:none;
-
+padding:14px 30px;
 display:inline-block;
-
+color:white;
+text-decoration:none;
+border-radius:6px;
 }
 
-/* MAP */
-
-.map svg{
-
-width:100%;
-max-width:900px;
-display:block;
-margin:auto;
-
-}
-
-/* CITIES */
+/* cities */
 
 .cities{
-
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
-
 }
 
 .city{
-
-background:#1f1f1f;
+background:#1a1a1a;
 border-radius:8px;
-cursor:pointer;
 overflow:hidden;
-
+cursor:pointer;
 }
 
 .city img{
-
 width:100%;
 height:180px;
 object-fit:cover;
-
 }
 
 .city h3{
-
 text-align:center;
-padding:10px;
-
+padding:12px;
+margin:0;
 }
 
-/* MODAL */
+/* modal */
 
 .modal{
-
 display:none;
 position:fixed;
-
 top:0;
 left:0;
-
 width:100%;
 height:100%;
-
 background:rgba(0,0,0,0.85);
-
 justify-content:center;
 align-items:center;
-
 }
 
 .modal-content{
-
 background:#111;
-
 padding:30px;
-
 max-width:700px;
-
-border-radius:8px;
-
+border-radius:10px;
 }
 
 .close{
-
 float:right;
 cursor:pointer;
 font-size:20px;
-
 }
 
-/* FOOTER */
-
 footer{
-
+background:#111;
 text-align:center;
 padding:25px;
-background:#111;
 color:#aaa;
+}
 
+iframe{
+width:100%;
+max-width:640px;
+height:360px;
+border:none;
 }
 
 </style>
@@ -282,15 +202,12 @@ color:#aaa;
 <div class="sun"></div>
 
 <div class="lang">
-
 <button onclick="setLang('en')">EN</button>
 <button onclick="setLang('de')">DE</button>
 <button onclick="setLang('jp')">日本語</button>
-
 </div>
 
 <h1>BOH Hamburg Orchestra</h1>
-
 <p>Japan Tour 2026</p>
 
 </div>
@@ -302,9 +219,7 @@ color:#aaa;
 <h2 id="aboutTitle">About the Orchestra</h2>
 
 <p id="aboutText">
-
 The BOH Hamburg Orchestra is a wind orchestra from Hamburg, Germany composed of musicians performing on a wide range of wind instruments. The ensemble regularly performs concerts in Hamburg and other cities across Germany and abroad.
-
 </p>
 
 </div>
@@ -314,14 +229,12 @@ The BOH Hamburg Orchestra is a wind orchestra from Hamburg, Germany composed of 
 <h2>Support the Tour</h2>
 
 <a class="button" href="https://gofund.me/d0fefb572" target="_blank">
-
 Donate via GoFundMe
-
 </a>
 
 <p>Scan the QR code</p>
 
-<img src="qr.png" width="200">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://gofund.me/d0fefb572">
 
 </div>
 
@@ -329,36 +242,7 @@ Donate via GoFundMe
 
 <h2>Watch the Orchestra</h2>
 
-<iframe width="640"
-height="360"
-src="https://www.youtube-nocookie.com/embed/DlcSEWRRmtA"
-allowfullscreen></iframe>
-
-</div>
-
-<div class="card map">
-
-<h2>Journey Hamburg → Tokyo</h2>
-
-<svg viewBox="0 0 1000 500">
-
-<image href="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg"
-width="1000"
-height="500"/>
-
-<circle cx="470" cy="150" r="6" fill="red"/>
-<text x="480" y="150" fill="white">Hamburg</text>
-
-<circle cx="870" cy="210" r="6" fill="red"/>
-<text x="880" y="210" fill="white">Tokyo</text>
-
-<line x1="470" y1="150"
-x2="870" y2="210"
-stroke="#BC002D"
-stroke-width="3"
-stroke-dasharray="8 6"/>
-
-</svg>
+<iframe src="https://www.youtube-nocookie.com/embed/DlcSEWRRmtA" allowfullscreen></iframe>
 
 </div>
 
@@ -369,27 +253,18 @@ stroke-dasharray="8 6"/>
 <div class="cities">
 
 <div class="city" onclick="openCity('tokyo')">
-
 <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Tokyo_Tower_and_surrounding_buildings.jpg">
-
 <h3>Tokyo</h3>
-
 </div>
 
 <div class="city" onclick="openCity('inage')">
-
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Chiba_City_view.jpg">
-
 <h3>Inage</h3>
-
 </div>
 
 <div class="city" onclick="openCity('ichikawa')">
-
 <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Ichikawa_city.jpg">
-
 <h3>Ichikawa</h3>
-
 </div>
 
 </div>
@@ -399,44 +274,37 @@ stroke-dasharray="8 6"/>
 </div>
 
 <div id="modal" class="modal">
-
 <div class="modal-content">
 
 <span class="close" onclick="closeModal()">✖</span>
 
 <h2 id="cityTitle"></h2>
-
 <p id="cityText"></p>
 
 </div>
-
 </div>
 
 <footer>
-
 BOH Hamburg Orchestra – Japan Tour 2026
-
 </footer>
 
 <script>
 
-/* SAKURA */
+/* sakura */
 
-for(let i=0;i<30;i++){
+for(let i=0;i<40;i++){
 
 let s=document.createElement("div")
-
 s.className="sakura"
 
 s.style.left=Math.random()*100+"%"
-
-s.style.top=Math.random()*200+"px"
+s.style.animationDuration=(6+Math.random()*6)+"s"
 
 document.querySelector(".hero").appendChild(s)
 
 }
 
-/* CITY INFO */
+/* cities */
 
 function openCity(city){
 
@@ -444,62 +312,44 @@ let title=""
 let text=""
 
 if(city==="tokyo"){
-
 title="Tokyo"
-
 text="Tokyo is the capital of Japan and one of the largest metropolitan areas in the world."
-
 }
 
 if(city==="inage"){
-
 title="Inage – Chiba"
-
-text="Inage is a district in Chiba Prefecture known for its school exchange programs."
-
+text="Inage is a district in Chiba Prefecture near Tokyo with strong school exchange programs."
 }
 
 if(city==="ichikawa"){
-
 title="Ichikawa"
-
-text="Ichikawa is a historic city east of Tokyo with a strong educational tradition."
-
+text="Ichikawa is a historic city east of Tokyo known for education and cultural exchange."
 }
 
 document.getElementById("cityTitle").innerText=title
 document.getElementById("cityText").innerText=text
-
 document.getElementById("modal").style.display="flex"
 
 }
 
 function closeModal(){
-
 document.getElementById("modal").style.display="none"
-
 }
 
-/* LANGUAGE */
+/* language */
 
 function setLang(lang){
 
 if(lang==="de"){
-
 document.getElementById("aboutTitle").innerText="Über das Orchester"
-
 }
 
 if(lang==="jp"){
-
 document.getElementById("aboutTitle").innerText="オーケストラについて"
-
 }
 
 if(lang==="en"){
-
 document.getElementById("aboutTitle").innerText="About the Orchestra"
-
 }
 
 }
