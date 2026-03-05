@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,92 +14,95 @@ body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
 color:#333;
-background-image:
+
+background:
 linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
 url("https://www.transparenttextures.com/patterns/rice-paper.png");
+
 }
 
-/* HEADER */
+/* HERO */
 
-.header{
+.hero{
 background:
-linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
 url("https://images.unsplash.com/photo-1507838153414-b4b713384a76");
+
 background-size:cover;
 background-position:center;
-text-align:center;
 color:white;
-padding:120px 20px;
+text-align:center;
+padding:150px 20px;
 }
 
-.header h1{
+.hero h1{
+font-size:50px;
 margin:0;
-font-size:46px;
-letter-spacing:1px;
 }
 
-.header p{
+.hero p{
+font-size:22px;
 margin-top:10px;
-font-size:20px;
-opacity:0.9;
 }
 
-/* MAIN CONTAINER */
+/* LANGUAGE */
+
+.lang{
+position:absolute;
+top:20px;
+right:20px;
+}
+
+.lang button{
+background:white;
+border:none;
+padding:6px 10px;
+margin-left:5px;
+cursor:pointer;
+}
+
+/* CONTAINER */
 
 .container{
-max-width:900px;
+max-width:1100px;
 margin:auto;
-padding:40px 30px;
-background:rgba(255,255,255,0.88);
+padding:40px 25px;
+}
+
+/* CARDS */
+
+.card{
+background:rgba(255,255,255,0.9);
+padding:35px;
+margin-bottom:40px;
 border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.08);
+box-shadow:0 8px 18px rgba(0,0,0,0.08);
 }
 
-/* SECTIONS */
-
-section{
-margin-bottom:50px;
-}
-
-h2{
-margin-bottom:20px;
-font-size:26px;
-}
-
-/* DONATION */
+/* DONATE */
 
 .donate{
 text-align:center;
-background:rgba(250,250,250,0.9);
-padding:35px;
-border-radius:10px;
-border:1px solid #eee;
 }
 
 .button{
 display:inline-block;
-background:#e63946;
+background:#d62828;
 color:white;
-padding:14px 30px;
+padding:15px 32px;
 text-decoration:none;
-font-size:18px;
 border-radius:6px;
+font-size:18px;
 margin-top:15px;
-transition:0.2s;
 }
 
 .button:hover{
-background:#c72e3b;
-}
-
-/* QR */
-
-.qr{
-margin-top:25px;
+background:#b51f1f;
 }
 
 .qr img{
-width:180px;
+width:200px;
+margin-top:20px;
 }
 
 /* VIDEO */
@@ -109,20 +113,47 @@ text-align:center;
 
 .video iframe{
 width:100%;
-max-width:560px;
-height:315px;
+max-width:640px;
+height:360px;
 border-radius:8px;
+}
+
+/* TOUR GRID */
+
+.tour{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+margin-top:20px;
+}
+
+.city{
+background:#f7f7f7;
+padding:15px;
+border-radius:6px;
+text-align:center;
+font-weight:bold;
+}
+
+/* MAP */
+
+.map{
+text-align:center;
+}
+
+.map img{
+width:100%;
+max-width:700px;
 }
 
 /* FOOTER */
 
 footer{
-text-align:center;
-padding:25px;
 background:#111;
 color:#aaa;
-font-size:14px;
-margin-top:40px;
+text-align:center;
+padding:25px;
+margin-top:50px;
 }
 
 </style>
@@ -131,43 +162,55 @@ margin-top:40px;
 
 <body>
 
-<!-- HEADER -->
+<div class="hero">
 
-<div class="header">
+<div class="lang">
+
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('de')">DE</button>
+<button onclick="setLang('jp')">日本語</button>
+
+</div>
 
 <h1>BOH Hamburg Orchestra</h1>
 <p>Japan Tour 2026</p>
 
 </div>
 
-<!-- CONTENT -->
 
 <div class="container">
 
-<section>
 
-<h2>About the Tour</h2>
+<div class="card">
 
-<p>
-In 2026 the BOH Hamburg Orchestra will travel to Japan for a special concert tour.
-The tour will create a musical and cultural bridge between Hamburg and Japan.
+<h2 data-en="About the Tour" data-de="Über die Reise" data-jp="ツアーについて">About the Tour</h2>
+
+<p data-en="In October 2026 the BOH Hamburg Orchestra will travel to Japan for an international cultural exchange and concert tour."
+data-de="Im Oktober 2026 reist das Blasorchester Hamburg nach Japan zu einem internationalen Konzert- und Austauschprogramm."
+data-jp="2026年10月、BOHハンブルク管楽オーケストラは日本へ文化交流とコンサートツアーを行います。">
+
+In October 2026 the BOH Hamburg Orchestra will travel to Japan for an international cultural exchange and concert tour.
+
 </p>
 
-<p>
-The orchestra will perform concerts, collaborate with Japanese musicians and
-represent Hamburg in one of the most exciting music cultures in the world.
+<p data-en="Young musicians from Germany and Japan will rehearse together, perform concerts and experience each other's culture."
+data-de="Deutsche und japanische Jugendliche werden gemeinsam proben, Konzerte spielen und ihre Kulturen kennenlernen."
+data-jp="ドイツと日本の若い音楽家たちは共に演奏し、互いの文化を体験します。">
+
+Young musicians from Germany and Japan will rehearse together, perform concerts and experience each other's culture.
+
 </p>
 
-</section>
+</div>
 
 
-<section class="donate">
+
+<div class="card donate">
 
 <h2>Support the Tour</h2>
 
 <p>
-To make this tour possible we are raising funds for travel, instrument transport
-and concert organisation.
+To make this tour possible we are raising funds for travel, instrument transport and concert organisation.
 </p>
 
 <a class="button"
@@ -184,10 +227,11 @@ Donate via GoFundMe
 
 </div>
 
-</section>
+</div>
 
 
-<section class="video">
+
+<div class="card video">
 
 <h2>Watch the Orchestra</h2>
 
@@ -197,27 +241,61 @@ frameborder="0"
 allowfullscreen>
 </iframe>
 
-</section>
+</div>
 
 
-<section>
 
-<h2>Contact</h2>
+<div class="card">
 
-<p>
-For information, partnerships or support please contact the orchestra.
-</p>
+<h2>Tour Cities</h2>
 
-</section>
+<div class="tour">
+
+<div class="city">Hamburg</div>
+<div class="city">Tokyo</div>
+<div class="city">Chiba</div>
+<div class="city">Inage</div>
+<div class="city">Ichikawa</div>
+
+</div>
+
+</div>
+
+
+
+<div class="card map">
+
+<h2>Journey</h2>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/World_map_blank_without_borders.svg">
+
+<p>Hamburg → Tokyo → Chiba → Ichikawa</p>
+
+</div>
+
 
 </div>
 
 
 <footer>
 
-BOH Hamburg Orchestra — Japan Tour 2026
+BOH Hamburg Orchestra – Japan Tour 2026
 
 </footer>
+
+
+<script>
+
+function setLang(lang){
+
+document.querySelectorAll("[data-en]").forEach(el=>{
+el.innerText = el.dataset[lang];
+});
+
+}
+
+</script>
+
 
 </body>
 </html>
