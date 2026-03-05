@@ -322,7 +322,7 @@ style="width:140px;"
 
 <div class="city" onclick="openCity('tokyo')">
 
-<img src="https://images.unsplash.com/photo-1549693578-d683be217e58">
+<img src="https://images.unsplash.com/photo-1549693578-d683be217e58?auto=format&fit=crop&w=800&q=60">
 
 <h3>Tokyo</h3>
 
@@ -330,7 +330,7 @@ style="width:140px;"
 
 <div class="city" onclick="openCity('inage')">
 
-<img src="https://images.unsplash.com/photo-1526481280691-906d2f1e8c64">
+<img src="https://images.unsplash.com/photo-1601823984263-b87b59798b70?auto=format&fit=crop&w=800&q=60">
 
 <h3>Inage</h3>
 
@@ -338,7 +338,7 @@ style="width:140px;"
 
 <div class="city" onclick="openCity('ichikawa')">
 
-<img src="https://images.unsplash.com/photo-1505067216361-2d5e0c73f92c">
+<img src="https://images.unsplash.com/photo-1590559899731-a382839e5549?auto=format&fit=crop&w=800&q=60">
 
 <h3>Ichikawa</h3>
 
@@ -400,7 +400,7 @@ if(city==="tokyo"){
 
 title="Tokyo"
 
-text="Tokyo is the capital of Japan and one of the largest metropolitan areas in the world."
+text="Tokyo is the capital of Japan and the largest metropolitan area in the world with more than 37 million people in the greater region. The city is famous for its fascinating contrast between tradition and modern technology – from historic temples and shrines to futuristic skyscrapers, neon districts and one of the most efficient transportation systems in the world. Tokyo is also one of the most important cultural and musical centers in Japan."
 
 }
 
@@ -408,7 +408,7 @@ if(city==="inage"){
 
 title="Inage – Chiba"
 
-text="Inage is part of Chiba Prefecture near Tokyo and is known for schools and cultural exchange programs."
+text="Inage is a coastal district in Chiba Prefecture located just east of Tokyo. The area is known for its seaside parks, relaxed atmosphere and strong connection to international cultural exchange programs. Inage is also home to several schools and universities and has a long tradition of welcoming international visitors and musical exchange projects."
 
 }
 
@@ -416,18 +416,15 @@ if(city==="ichikawa"){
 
 title="Ichikawa"
 
-text="Ichikawa is a historic city east of Tokyo with many cultural and educational institutions."
+text="Ichikawa is a historic city located between Tokyo and Chiba. It is known for its beautiful temples, riverside parks and strong cultural life. The city has many educational institutions and a vibrant local music scene. Because of its proximity to Tokyo, Ichikawa combines the calm atmosphere of a traditional Japanese town with easy access to the dynamic capital."
 
 }
 
 document.getElementById("cityTitle").innerText=title
-
 document.getElementById("cityText").innerText=text
-
 document.getElementById("modal").style.display="flex"
 
 }
-
 function closeModal(){
 
 document.getElementById("modal").style.display="none"
