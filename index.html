@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>BOH Hamburg Orchestra – Japan Tour 2026</title>
 
 <style>
@@ -10,38 +11,40 @@
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#0e0e0e;
+background:#0c0c0c;
 color:white;
 }
 
 /* HERO */
 
 .hero{
+
 position:relative;
 height:420px;
+
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-overflow:hidden;
 
-/* нотна петолиния */
+overflow:hidden;
 
 background:
 linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
-url("https://upload.wikimedia.org/wikipedia/commons/0/0b/Sheet_music_background.jpg");
+url("https://images.unsplash.com/photo-1507838153414-b4b713384a76");
 
 background-size:cover;
 background-position:center;
+
 }
 
-/* японско слънце */
+/* JAPAN SUN */
 
 .sun{
 position:absolute;
 width:300px;
 height:300px;
-background:#BC002D;
+background:#bc002d;
 border-radius:50%;
 top:60px;
 left:50%;
@@ -49,45 +52,51 @@ transform:translateX(-50%);
 opacity:0.45;
 }
 
-/* сакура */
+/* SAKURA */
 
 .sakura{
+
 position:absolute;
-width:10px;
-height:10px;
-background:#f6c6d3;
+width:8px;
+height:8px;
+
+background:#f4b6c2;
 border-radius:50%;
-opacity:0.8;
+
 animation:fall linear infinite;
+
 }
 
 @keyframes fall{
-0%{transform:translateY(-50px)}
+
+0%{transform:translateY(-40px)}
+
 100%{transform:translateY(600px)}
+
 }
 
 .hero h1{
 font-size:58px;
-z-index:2;
 margin:0;
+z-index:2;
 }
 
 .hero p{
-font-size:22px;
+font-size:20px;
 z-index:2;
 }
 
-/* language */
+/* LANGUAGE */
 
 .lang{
 position:absolute;
 top:20px;
 right:20px;
-z-index:3;
+z-index:5;
 }
 
 .lang button{
-background:#BC002D;
+background:#bc002d;
 border:none;
 color:white;
 padding:6px 12px;
@@ -95,15 +104,15 @@ margin-left:6px;
 cursor:pointer;
 }
 
-/* container */
+/* CONTAINER */
 
 .container{
-max-width:1200px;
+max-width:1100px;
 margin:auto;
 padding:40px;
 }
 
-/* cards */
+/* CARDS */
 
 .card{
 background:#111;
@@ -112,10 +121,10 @@ margin-bottom:30px;
 border-radius:10px;
 }
 
-/* donate */
+/* DONATE */
 
 .button{
-background:#BC002D;
+background:#bc002d;
 padding:14px 30px;
 display:inline-block;
 color:white;
@@ -123,7 +132,7 @@ text-decoration:none;
 border-radius:6px;
 }
 
-/* cities */
+/* CITIES */
 
 .cities{
 display:grid;
@@ -150,25 +159,34 @@ padding:12px;
 margin:0;
 }
 
-/* modal */
+/* MODAL */
 
 .modal{
+
 display:none;
+
 position:fixed;
+
 top:0;
 left:0;
+
 width:100%;
 height:100%;
+
 background:rgba(0,0,0,0.85);
+
 justify-content:center;
 align-items:center;
+
 }
 
 .modal-content{
+
 background:#111;
 padding:30px;
 max-width:700px;
 border-radius:10px;
+
 }
 
 .close{
@@ -184,13 +202,6 @@ padding:25px;
 color:#aaa;
 }
 
-iframe{
-width:100%;
-max-width:640px;
-height:360px;
-border:none;
-}
-
 </style>
 
 </head>
@@ -202,15 +213,18 @@ border:none;
 <div class="sun"></div>
 
 <div class="lang">
+
 <button onclick="setLang('en')">EN</button>
 <button onclick="setLang('de')">DE</button>
 <button onclick="setLang('jp')">日本語</button>
+
 </div>
 
 <h1>BOH Hamburg Orchestra</h1>
 <p>Japan Tour 2026</p>
 
 </div>
+
 
 <div class="container">
 
@@ -219,7 +233,11 @@ border:none;
 <h2 id="aboutTitle">About the Orchestra</h2>
 
 <p id="aboutText">
-The BOH Hamburg Orchestra is a wind orchestra from Hamburg, Germany composed of musicians performing on a wide range of wind instruments. The ensemble regularly performs concerts in Hamburg and other cities across Germany and abroad.
+
+The BOH Hamburg Orchestra is a wind orchestra from Hamburg, Germany composed of musicians performing on a wide range of wind instruments.
+
+The ensemble regularly performs concerts in Hamburg and other cities across Germany and abroad.
+
 </p>
 
 </div>
@@ -228,8 +246,12 @@ The BOH Hamburg Orchestra is a wind orchestra from Hamburg, Germany composed of 
 
 <h2>Support the Tour</h2>
 
-<a class="button" href="https://gofund.me/d0fefb572" target="_blank">
+<a class="button"
+href="https://gofund.me/d0fefb572"
+target="_blank">
+
 Donate via GoFundMe
+
 </a>
 
 <p>Scan the QR code</p>
@@ -240,52 +262,59 @@ Donate via GoFundMe
 
 <div class="card">
 
-<h2>Watch the Orchestra</h2>
-
-<iframe src="https://www.youtube-nocookie.com/embed/DlcSEWRRmtA" allowfullscreen></iframe>
-
-</div>
-
-<div class="card">
-
 <h2>Tour Cities</h2>
 
 <div class="cities">
 
 <div class="city" onclick="openCity('tokyo')">
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Tokyo_Tower_and_surrounding_buildings.jpg">
+
+<img src="https://images.unsplash.com/photo-1549693578-d683be217e58">
+
 <h3>Tokyo</h3>
+
 </div>
 
 <div class="city" onclick="openCity('inage')">
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Chiba_City_view.jpg">
+
+<img src="https://images.unsplash.com/photo-1526481280691-906d2f1e8c64">
+
 <h3>Inage</h3>
+
 </div>
 
 <div class="city" onclick="openCity('ichikawa')">
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Ichikawa_city.jpg">
+
+<img src="https://images.unsplash.com/photo-1505067216361-2d5e0c73f92c">
+
 <h3>Ichikawa</h3>
-</div>
 
 </div>
 
 </div>
 
 </div>
+
+</div>
+
 
 <div id="modal" class="modal">
+
 <div class="modal-content">
 
 <span class="close" onclick="closeModal()">✖</span>
 
 <h2 id="cityTitle"></h2>
+
 <p id="cityText"></p>
 
 </div>
+
 </div>
 
 <footer>
+
 BOH Hamburg Orchestra – Japan Tour 2026
+
 </footer>
 
 <script>
@@ -295,9 +324,11 @@ BOH Hamburg Orchestra – Japan Tour 2026
 for(let i=0;i<40;i++){
 
 let s=document.createElement("div")
+
 s.className="sakura"
 
 s.style.left=Math.random()*100+"%"
+
 s.style.animationDuration=(6+Math.random()*6)+"s"
 
 document.querySelector(".hero").appendChild(s)
@@ -312,28 +343,41 @@ let title=""
 let text=""
 
 if(city==="tokyo"){
+
 title="Tokyo"
+
 text="Tokyo is the capital of Japan and one of the largest metropolitan areas in the world."
+
 }
 
 if(city==="inage"){
+
 title="Inage – Chiba"
-text="Inage is a district in Chiba Prefecture near Tokyo with strong school exchange programs."
+
+text="Inage is part of Chiba Prefecture near Tokyo and is known for schools and cultural exchange programs."
+
 }
 
 if(city==="ichikawa"){
+
 title="Ichikawa"
-text="Ichikawa is a historic city east of Tokyo known for education and cultural exchange."
+
+text="Ichikawa is a historic city east of Tokyo with many cultural and educational institutions."
+
 }
 
 document.getElementById("cityTitle").innerText=title
+
 document.getElementById("cityText").innerText=text
+
 document.getElementById("modal").style.display="flex"
 
 }
 
 function closeModal(){
+
 document.getElementById("modal").style.display="none"
+
 }
 
 /* language */
@@ -341,15 +385,21 @@ document.getElementById("modal").style.display="none"
 function setLang(lang){
 
 if(lang==="de"){
+
 document.getElementById("aboutTitle").innerText="Über das Orchester"
+
 }
 
 if(lang==="jp"){
+
 document.getElementById("aboutTitle").innerText="オーケストラについて"
+
 }
 
 if(lang==="en"){
+
 document.getElementById("aboutTitle").innerText="About the Orchestra"
+
 }
 
 }
