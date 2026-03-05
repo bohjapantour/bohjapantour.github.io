@@ -11,26 +11,32 @@
 
 body{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
+font-family:Arial;
 color:#333;
-background:
-linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
-url("https://www.transparenttextures.com/patterns/rice-paper.png");
-overflow-x:hidden;
+
+/* Генериран японски фон (без copyright) */
+
+background-image:url("data:image/svg+xml,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'>\
+<rect width='1600' height='900' fill='#fdf6f6'/>\
+<circle cx='800' cy='400' r='180' fill='#e63946' opacity='0.2'/>\
+<polygon points='700,600 900,600 800,420' fill='#444'/>\
+<circle cx='200' cy='200' r='80' fill='#ffb7c5' opacity='0.4'/>\
+<circle cx='1300' cy='250' r='70' fill='#ffb7c5' opacity='0.3'/>\
+<circle cx='400' cy='700' r='90' fill='#ffb7c5' opacity='0.3'/>\
+</svg>");
+
+background-size:cover;
+background-attachment:fixed;
+
 }
 
 /* HERO */
 
 .hero{
-background:
-linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-url("https://images.unsplash.com/photo-1507838153414-b4b713384a76");
-background-size:cover;
-background-position:center;
-color:white;
 text-align:center;
-padding:160px 20px;
-position:relative;
+padding:120px 20px;
+color:#222;
 }
 
 .hero h1{
@@ -43,58 +49,32 @@ font-size:22px;
 margin-top:10px;
 }
 
-/* LANGUAGE */
-
-.lang{
-position:absolute;
-top:20px;
-right:20px;
-}
-
-.lang button{
-border:none;
-padding:6px 10px;
-margin-left:5px;
-cursor:pointer;
-}
-
-/* CONTAINER */
+/* CONTENT */
 
 .container{
 max-width:1100px;
 margin:auto;
-padding:40px 25px;
+padding:30px;
 }
-
-/* CARD */
 
 .card{
 background:rgba(255,255,255,0.9);
 padding:35px;
-margin-bottom:40px;
+margin-bottom:35px;
 border-radius:10px;
-box-shadow:0 8px 18px rgba(0,0,0,0.08);
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
 /* DONATE */
 
-.donate{
-text-align:center;
-}
-
 .button{
-display:inline-block;
 background:#d62828;
 color:white;
-padding:15px 32px;
+padding:15px 30px;
 text-decoration:none;
 border-radius:6px;
-font-size:18px;
+display:inline-block;
 margin-top:15px;
-}
-
-.button:hover{
-background:#b51f1f;
 }
 
 /* QR */
@@ -104,105 +84,73 @@ width:200px;
 margin-top:20px;
 }
 
-/* VIDEO */
+/* CITY GRID */
 
-.video iframe{
-width:100%;
-max-width:640px;
-height:360px;
-border-radius:8px;
-}
-
-/* TOUR */
-
-.tour{
+.cities{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:15px;
-margin-top:20px;
 }
 
 .city{
-background:#f7f7f7;
+background:#f4f4f4;
 padding:15px;
-border-radius:6px;
+border-radius:8px;
 text-align:center;
 font-weight:bold;
+cursor:pointer;
+transition:0.2s;
 }
 
-/* PROGRESS BAR */
+.city:hover{
+background:#e63946;
+color:white;
+}
 
-.progress{
+/* MODAL */
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
 width:100%;
-background:#eee;
-border-radius:20px;
-overflow:hidden;
-margin-top:20px;
+height:100%;
+background:rgba(0,0,0,0.7);
+justify-content:center;
+align-items:center;
 }
 
-.progress-bar{
-height:20px;
-width:35%;
-background:#d62828;
-}
-
-/* GALLERY */
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
-}
-
-.gallery img{
-width:100%;
+.modal-content{
+background:white;
+padding:30px;
+max-width:600px;
 border-radius:8px;
 }
 
-/* SAKURA */
-
-.sakura{
-position:fixed;
-top:-10px;
+.close{
+float:right;
+cursor:pointer;
 font-size:20px;
-animation:fall linear infinite;
-opacity:0.8;
 }
-
-@keyframes fall{
-0%{
-transform:translateY(-10vh) rotate(0deg);
-}
-100%{
-transform:translateY(110vh) rotate(360deg);
-}
-}
-
-/* FOOTER */
 
 footer{
-background:#111;
-color:#aaa;
 text-align:center;
 padding:25px;
-margin-top:50px;
+background:#111;
+color:#aaa;
+margin-top:40px;
 }
 
 </style>
 
 </head>
 
+
 <body>
 
-<!-- HERO -->
 
 <div class="hero">
-
-<div class="lang">
-<button onclick="setLang('en')">EN</button>
-<button onclick="setLang('de')">DE</button>
-<button onclick="setLang('jp')">日本語</button>
-</div>
 
 <h1>BOH Hamburg Orchestra</h1>
 <p>Japan Tour 2026</p>
@@ -212,38 +160,26 @@ margin-top:50px;
 
 <div class="container">
 
-<!-- ABOUT -->
 
 <div class="card">
 
-<h2 data-en="About the Tour"
-data-de="Über die Reise"
-data-jp="ツアーについて">
+<h2>About the Tour</h2>
 
-About the Tour
+<p>
 
-</h2>
-
-<p data-en="In October 2026 the BOH Hamburg Orchestra will travel to Japan for an international cultural exchange and concert tour."
-data-de="Im Oktober 2026 reist das Blasorchester Hamburg nach Japan zu einem internationalen Konzert- und Austauschprogramm."
-data-jp="2026年10月、BOHハンブルク管楽オーケストラは日本へ文化交流とコンサートツアーを行います。">
-
-In October 2026 the BOH Hamburg Orchestra will travel to Japan for an international cultural exchange and concert tour.
+In October 2026 the BOH Hamburg Orchestra will travel to Japan for a cultural exchange and concert tour connecting Hamburg and Japan through music.
 
 </p>
 
 </div>
 
 
-<!-- DONATE -->
 
-<div class="card donate">
+<div class="card" style="text-align:center">
 
 <h2>Support the Tour</h2>
 
-<p>
-To make this tour possible we are raising funds for travel, instruments and concerts.
-</p>
+<p>Help us make this journey possible.</p>
 
 <a class="button"
 href="https://gofund.me/d0fefb572"
@@ -252,14 +188,6 @@ target="_blank">
 Donate via GoFundMe
 
 </a>
-
-<div class="progress">
-
-<div class="progress-bar"></div>
-
-</div>
-
-<p>Fundraising progress</p>
 
 <div class="qr">
 
@@ -272,52 +200,20 @@ Donate via GoFundMe
 </div>
 
 
-<!-- VIDEO -->
-
-<div class="card video">
-
-<h2>Watch the Orchestra</h2>
-
-<iframe
-src="https://www.youtube.com/embed/DlcSEWRRmtA"
-frameborder="0"
-allowfullscreen>
-</iframe>
-
-</div>
-
-
-<!-- TOUR -->
 
 <div class="card">
 
 <h2>Tour Cities</h2>
 
-<div class="tour">
+<div class="cities">
 
-<div class="city">Hamburg</div>
-<div class="city">Tokyo</div>
-<div class="city">Chiba</div>
-<div class="city">Inage</div>
-<div class="city">Ichikawa</div>
+<div class="city" onclick="openCity('hamburg')">Hamburg</div>
 
-</div>
+<div class="city" onclick="openCity('tokyo')">Tokyo</div>
 
-</div>
+<div class="city" onclick="openCity('inage')">Inage</div>
 
-
-<!-- GALLERY -->
-
-<div class="card">
-
-<h2>Orchestra</h2>
-
-<div class="gallery">
-
-<img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6">
-<img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d">
-<img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76">
-<img src="https://images.unsplash.com/photo-1464375117522-1311dd6d0cd6">
+<div class="city" onclick="openCity('ichikawa')">Ichikawa</div>
 
 </div>
 
@@ -325,6 +221,25 @@ allowfullscreen>
 
 
 </div>
+
+
+
+<!-- MODAL -->
+
+<div id="modal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal()">✖</span>
+
+<h2 id="cityTitle"></h2>
+
+<p id="cityText"></p>
+
+</div>
+
+</div>
+
 
 
 <footer>
@@ -336,28 +251,41 @@ BOH Hamburg Orchestra – Japan Tour 2026
 
 <script>
 
-/* LANGUAGE SWITCH */
 
-function setLang(lang){
-document.querySelectorAll("[data-en]").forEach(el=>{
-el.innerText = el.dataset[lang];
-});
+function openCity(city){
+
+let title=""
+let text=""
+
+if(city=="hamburg"){
+title="Hamburg"
+text="Hamburg is Germany's second largest city and one of Europe's most important port cities. It has a long musical tradition and is home to the famous Elbphilharmonie concert hall."
 }
 
-/* SAKURA ANIMATION */
+if(city=="tokyo"){
+title="Tokyo"
+text="Tokyo is Japan's capital and one of the largest cities in the world. It combines ancient temples with modern technology and is a global center for culture, music and innovation."
+}
 
-for(let i=0;i<20;i++){
+if(city=="inage"){
+title="Inage (Chiba)"
+text="Inage is part of the Chiba region near Tokyo. The Chiba Municipal Inage Senior High School is known for its strong music programs and international cultural exchange."
+}
 
-let sakura=document.createElement("div");
-sakura.className="sakura";
-sakura.innerHTML="🌸";
+if(city=="ichikawa"){
+title="Ichikawa"
+text="Ichikawa is a historic city in Chiba prefecture east of Tokyo. It is known for education and cultural exchange and hosts several respected schools and music groups."
+}
 
-sakura.style.left=Math.random()*100+"vw";
-sakura.style.animationDuration=(5+Math.random()*10)+"s";
-sakura.style.fontSize=(10+Math.random()*20)+"px";
+document.getElementById("cityTitle").innerText=title
+document.getElementById("cityText").innerText=text
 
-document.body.appendChild(sakura);
+document.getElementById("modal").style.display="flex"
 
+}
+
+function closeModal(){
+document.getElementById("modal").style.display="none"
 }
 
 </script>
