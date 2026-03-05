@@ -57,13 +57,18 @@ opacity:0.45;
 .sakura{
 
 position:absolute;
-width:8px;
-height:8px;
 
-background:#f4b6c2;
-border-radius:50%;
+width:18px;
+height:18px;
 
-animation:fall linear infinite;
+background:url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Cherry_blossom_petals.svg/512px-Cherry_blossom_petals.svg.png");
+
+background-size:contain;
+background-repeat:no-repeat;
+
+animation:fall linear infinite, spin 6s linear infinite;
+
+pointer-events:none;
 
 }
 
@@ -72,6 +77,14 @@ animation:fall linear infinite;
 0%{transform:translateY(-40px)}
 
 100%{transform:translateY(600px)}
+
+}
+
+@keyframes spin{
+
+0%{ transform:rotate(0deg); }
+
+100%{ transform:rotate(360deg); }
 
 }
 
@@ -246,14 +259,15 @@ The ensemble regularly performs concerts in Hamburg and other cities across Germ
 
 <div style="
 display:grid;
-grid-template-columns: repeat(3, 1fr);
+grid-template-columns: 1fr 2fr 1fr;
 gap:40px;
-align-items:start;
+align-items:center;
+text-align:center;
 ">
 
-<!-- Column 1: Donate -->
+<!-- LEFT : DONATE -->
 
-<div>
+<div style="text-align:left;">
 
 <a class="button"
 href="https://gofund.me/d0fefb572"
@@ -267,26 +281,13 @@ Support the Japan Tour 2026
 
 </div>
 
-<!-- Column 2: QR -->
-
-<div>
-
-<p>Scan the QR code</p>
-
-<img
-src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://gofund.me/d0fefb572"
-style="max-width:200px;"
->
-
-</div>
-
-<!-- Column 3: Video -->
+<!-- CENTER : VIDEO -->
 
 <div>
 
 <iframe
 width="100%"
-height="200"
+height="280"
 src="https://www.youtube-nocookie.com/embed/DlcSEWRRmtA"
 title="BOH Hamburg Orchestra"
 allowfullscreen>
@@ -294,10 +295,23 @@ allowfullscreen>
 
 </div>
 
-</div>
+<!-- RIGHT : QR -->
+
+<div style="text-align:right;">
+
+<p>Scan the QR code</p>
+
+<img
+src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://gofund.me/d0fefb572"
+style="width:140px;"
+>
 
 </div>
 
+</div>
+
+</div>
+  
 <div class="card">
 
 <h2>Tour Cities</h2>
@@ -426,8 +440,15 @@ if(lang==="en"){
 
 document.getElementById("aboutTitle").innerText="About the Orchestra"
 
-document.getElementById("aboutText").innerText=
-"The BOH Hamburg Orchestra is a wind orchestra from Hamburg, Germany. The ensemble consists of musicians performing on a wide range of wind instruments. The orchestra regularly performs concerts in Hamburg and other cities throughout Germany as well as internationally. Its repertoire includes classical arrangements, symphonic wind music, film music and contemporary compositions. The ensemble is actively involved in cultural exchange projects and international concert tours."
+document.getElementById("aboutText").innerText=`The BOH Hamburg Orchestra is a wind orchestra based in Hamburg, Germany.  
+The ensemble brings together musicians who share a passion for wind music and the rich musical tradition of northern Germany.
+
+The orchestra regularly performs concerts in Hamburg and in many other cities throughout Germany. Over the years the ensemble has also appeared in international concerts and cultural exchange projects.
+
+Its repertoire ranges from classical arrangements and symphonic wind music to film music and modern compositions written specifically for wind orchestra.
+
+Beyond its concert activity, the orchestra is committed to building cultural bridges through music.  
+The Japan Tour 2026 is an important step in this mission, bringing musicians and audiences from Hamburg and Japan together in a shared musical experience.`
 
 }
 
@@ -435,8 +456,15 @@ if(lang==="de"){
 
 document.getElementById("aboutTitle").innerText="Über das Orchester"
 
-document.getElementById("aboutText").innerText=
-"Das BOH Hamburg Orchestra ist ein Blasorchester aus Hamburg. Das Ensemble besteht aus Musikerinnen und Musikern, die auf verschiedenen Blasinstrumenten spielen. Das Orchester tritt regelmäßig in Hamburg sowie in anderen Städten Deutschlands und auch international auf. Das Repertoire umfasst klassische Bearbeitungen, sinfonische Blasmusik, Filmmusik und moderne Kompositionen."
+document.getElementById("aboutText").innerText=`Das BOH Hamburg Orchestra ist ein Blasorchester aus Hamburg.  
+Das Ensemble vereint Musikerinnen und Musiker, die eine gemeinsame Leidenschaft für Blasmusik und die musikalische Tradition Norddeutschlands teilen.
+
+Das Orchester tritt regelmäßig in Hamburg sowie in vielen anderen Städten Deutschlands auf. In den vergangenen Jahren konnte das Ensemble auch bei internationalen Konzerten und kulturellen Austauschprojekten auftreten.
+
+Das Repertoire reicht von klassischen Bearbeitungen und sinfonischer Blasmusik über Filmmusik bis hin zu modernen Kompositionen für Blasorchester.
+
+Neben seiner Konzerttätigkeit engagiert sich das Orchester besonders für den kulturellen Austausch durch Musik.  
+Die Japan Tour 2026 ist ein bedeutendes Projekt, das Musiker und Publikum aus Hamburg und Japan miteinander verbindet.`
 
 }
 
@@ -444,8 +472,16 @@ if(lang==="jp"){
 
 document.getElementById("aboutTitle").innerText="オーケストラについて"
 
-document.getElementById("aboutText").innerText=
-"BOH Hamburg Orchestraはドイツ・ハンブルクの吹奏楽団です。様々な管楽器を演奏する音楽家で構成されています。ハンブルクを中心にドイツ国内や海外でも演奏活動を行っています。クラシック編曲、映画音楽、現代作品など幅広いレパートリーを持っています。"
+document.getElementById("aboutText").innerText=`BOH Hamburg Orchestra はドイツ・ハンブルクを拠点とする吹奏楽団です。  
+北ドイツの音楽文化と吹奏楽の伝統を大切にしながら、さまざまな管楽器を演奏する音楽家たちによって構成されています。
+
+オーケストラはハンブルクを中心に、ドイツ各地で定期的にコンサートを行っています。  
+これまでにも国際的な演奏会や文化交流プロジェクトに参加してきました。
+
+レパートリーはクラシック編曲、シンフォニック・ウィンド・ミュージック、映画音楽、そして現代の作曲家による作品まで幅広く含まれています。
+
+音楽を通じた文化交流もオーケストラの重要な活動の一つです。  
+2026年の日本ツアーは、ハンブルクと日本の人々を音楽で結ぶ特別なプロジェクトとして企画されています。`
 
 }
 
