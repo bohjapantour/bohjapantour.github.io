@@ -12,89 +12,95 @@
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#f4f4f4;
+background:#f2f2f2;
 color:#333;
 }
 
-.hero{
-background:url("https://images.unsplash.com/photo-1507838153414-b4b713384a76") center/cover no-repeat;
-height:80vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
+.header{
+background:#111;
 color:white;
+text-align:center;
+padding:50px 20px;
 }
 
-.hero-overlay{
-background:rgba(0,0,0,0.65);
-padding:60px;
-width:100%;
-}
-
-.hero h1{
-font-size:56px;
+.header h1{
 margin:0;
+font-size:42px;
 }
 
-.hero p{
-font-size:24px;
+.header p{
 margin-top:10px;
+font-size:20px;
 }
 
 .container{
-max-width:1000px;
+max-width:900px;
 margin:auto;
-padding:50px 20px;
+padding:40px 20px;
 background:white;
 }
 
 section{
-margin-bottom:60px;
+margin-bottom:50px;
 }
 
 h2{
-margin-top:0;
-font-size:32px;
+margin-bottom:20px;
+}
+
+.donate{
+text-align:center;
+background:#fafafa;
+padding:30px;
+border-radius:8px;
 }
 
 .button{
 display:inline-block;
 background:#e63946;
 color:white;
-padding:16px 32px;
+padding:14px 28px;
 text-decoration:none;
-font-size:20px;
+font-size:18px;
 border-radius:6px;
-margin-top:10px;
+margin-top:15px;
 }
 
-.donation{
+.qr{
+margin-top:25px;
+}
+
+.qr img{
+width:200px;
+}
+
+.video{
 text-align:center;
-background:#fafafa;
-padding:40px;
-border-radius:8px;
 }
 
-.tour{
+.video iframe{
+width:100%;
+max-width:560px;
+height:315px;
+}
+
+.gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
+gap:15px;
 }
 
-.city{
-background:#fafafa;
-padding:20px;
-text-align:center;
+.gallery img{
+width:100%;
 border-radius:6px;
-font-size:18px;
 }
 
 footer{
 text-align:center;
-padding:30px;
+padding:25px;
 background:#111;
 color:#aaa;
+font-size:14px;
 }
 
 </style>
@@ -102,13 +108,11 @@ color:#aaa;
 
 <body>
 
-<div class="hero">
-<div class="hero-overlay">
+<div class="header">
 
 <h1>BOH Hamburg Orchestra</h1>
 <p>Japan Tour 2026</p>
 
-</div>
 </div>
 
 <div class="container">
@@ -119,19 +123,18 @@ color:#aaa;
 
 <p>
 In 2026 the BOH Hamburg Orchestra will travel to Japan for a special concert tour.
-The tour will create a cultural bridge between Hamburg and Japan through music,
-collaboration and live performances.
+The tour will build a cultural bridge between Hamburg and Japan through music and collaboration.
 </p>
 
 <p>
 The orchestra will perform concerts, meet Japanese musicians and represent Hamburg
-in one of the world's most exciting music cultures.
+in one of the most exciting music cultures in the world.
 </p>
 
 </section>
 
 
-<section class="donation">
+<section class="donate">
 
 <h2>Support the Tour</h2>
 
@@ -140,25 +143,32 @@ To make this tour possible we are raising funds for travel, instrument transport
 and concert organisation.
 </p>
 
-<a class="button" href="#">
-Support the Tour
+<a class="button"
+href="https://gofund.me/d0fefb572"
+target="_blank">
+Donate via GoFundMe
 </a>
+
+<div class="qr">
+
+<p>Scan to donate</p>
+
+<img src="qr.png">
+
+</div>
 
 </section>
 
 
-<section>
+<section class="video">
 
-<h2>Tour Cities</h2>
+<h2>Watch the Orchestra</h2>
 
-<div class="tour">
-
-<div class="city">Hamburg</div>
-<div class="city">Tokyo</div>
-<div class="city">Kyoto</div>
-<div class="city">Osaka</div>
-
-</div>
+<iframe
+src="https://www.youtube.com/embed/DlcSEWRRmtA"
+frameborder="0"
+allowfullscreen>
+</iframe>
 
 </section>
 
