@@ -467,13 +467,13 @@ for(let i=0;i<60;i++){
   s.style.left=Math.random()*100+"%";
   s.style.top=Math.random()*-200+"px";
 
-  s.style.opacity=0.6+Math.random()*0.4;
+  s.style.opacity=0.4+Math.random()*0.3;
 
-  let size = 20+Math.random()*20;
+  let size = 6 + Math.random()*10;
   s.style.width = size+"px";
   s.style.height = size+"px";
 
-  s.style.animationDuration = (6+Math.random()*6)+"s";
+  s.style.animationDuration = (10+Math.random()*10)+"s";
   s.style.animationDelay = (Math.random()*6)+"s";
 
   document.querySelector(".hero").appendChild(s);
