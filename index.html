@@ -152,11 +152,18 @@ text-align:center;
 }
 
 .support-left{
-text-align:left;
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+gap:16px;
 }
 
 .support-right{
-text-align:right;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
 }
 
 /* DONATE */
@@ -457,7 +464,7 @@ allowfullscreen>
 <div class="support-left">
 
 <p class="support-text">
-Click the button or scan the QR code to support our young musicians via GoFundMe.
+Help our young musicians via GoFundMe
 </p>
 
 <a class="button"
@@ -476,7 +483,7 @@ Donate <span class="heart">♥</span>
 
 <img
 src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://gofund.me/d0fefb572"
-style="width:160px;"
+style="width:180px;"
 >
 
 </div>
