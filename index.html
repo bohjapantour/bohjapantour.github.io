@@ -162,26 +162,30 @@ text-align:right;
 /* DONATE */
 
 .button{
-display:inline-block;
-background:#ffffff;
-color:#8c2436;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+
+background:#111;
+color:white;
+
 text-decoration:none;
 
-padding:18px 36px;
+padding:18px 34px;
 font-size:18px;
 font-weight:700;
 
-border-radius:12px;
-border:none;
+border-radius:14px;
+border:3px solid white;
 
 box-shadow:0 6px 18px rgba(0,0,0,0.35);
+
 transition:all .2s ease;
 }
 
 .button:hover{
-background:#ffe9ee;
+background:#000;
 transform:translateY(-2px);
-box-shadow:0 10px 22px rgba(0,0,0,0.4);
 }
 
 /* CITIES */
@@ -381,6 +385,11 @@ line-height:1.5;
 max-width:320px;
 }
 
+.heart{
+color:#ff4a70;
+margin-left:4px;
+}
+   
 </style>
 
 </head>
@@ -447,15 +456,15 @@ allowfullscreen>
 
 <div class="support-left">
 
+<p class="support-text">
+Click the button or scan the QR code to support our young musicians via GoFundMe.
+</p>
+
 <a class="button"
 href="https://gofund.me/d0fefb572"
 target="_blank">
-Support the Tour
+Donate <span class="heart">♥</span>
 </a>
-
-<p class="support-text">
-Click the button or scan the QR code to support our young musicians and help bring music from Hamburg to Japan.
-</p>
 
 </div>
 
@@ -467,7 +476,7 @@ Click the button or scan the QR code to support our young musicians and help bri
 
 <img
 src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://gofund.me/d0fefb572"
-style="width:140px;"
+style="width:160px;"
 >
 
 </div>
