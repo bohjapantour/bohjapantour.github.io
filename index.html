@@ -159,10 +159,7 @@ align-items:center;
 
 .support-right{
 display:flex;
-flex-direction:column;
 align-items:center;
-justify-content:center;
-gap:10px;
 }
 
 /* DONATE */
@@ -405,14 +402,6 @@ margin:0 0 24px 0;
 text-align:left;
 }
 
-.support-right{
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-gap:10px;
-}
-
 .support-right img{
 border:3px solid white;
 border-radius:16px;
@@ -426,49 +415,7 @@ margin:10px 0 0 0;
 font-size:13px;
 color:#f3dfe4;
 text-align:center;
-line-height:1.3;
-max-width:140px;
-word-break:break-word;
-}
-
-.card:nth-of-type(2){
-min-height:220px;
-}
-
-.card:nth-of-type(3){
-padding-bottom:45px;
-}
-
-.modal-gallery{
-margin:20px 0;
-}
-
-.city-main-image{
-width:100%;
-max-height:320px;
-object-fit:cover;
-border-radius:10px;
-margin-bottom:12px;
-}
-
-.gallery-thumbs{
-display:flex;
-gap:10px;
-}
-
-.gallery-thumbs img{
-width:90px;
-height:60px;
-object-fit:cover;
-cursor:pointer;
-border-radius:6px;
-opacity:0.75;
-transition:0.2s;
-}
-
-.gallery-thumbs img:hover{
-opacity:1;
-transform:scale(1.05);
+word-break:break-all;
 }
 
 </style>
@@ -597,25 +544,14 @@ style="width:140px;">
 
 </div>
 
+
+<div id="modal" class="modal">
+
 <div class="modal-content">
 
-<span class="close" onclick="closeModal()">×</span>
+<span class="close" onclick="closeModal()">✖</span>
 
 <h2 id="cityTitle"></h2>
-
-<div class="modal-gallery">
-
-<img id="cityImage" class="city-main-image">
-
-<div class="gallery-thumbs">
-
-<img onclick="changeImage(this)" src="images/tokyo1.jpg">
-<img onclick="changeImage(this)" src="images/tokyo2.jpg">
-<img onclick="changeImage(this)" src="images/tokyo3.jpg">
-
-</div>
-
-</div>
 
 <p id="cityText"></p>
 
