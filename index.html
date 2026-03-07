@@ -159,7 +159,10 @@ align-items:center;
 
 .support-right{
 display:flex;
+flex-direction:column;
 align-items:center;
+justify-content:center;
+gap:10px;
 }
 
 /* DONATE */
@@ -402,6 +405,14 @@ margin:0 0 24px 0;
 text-align:left;
 }
 
+.support-right{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:10px;
+}
+
 .support-right img{
 border:3px solid white;
 border-radius:16px;
@@ -415,9 +426,19 @@ margin:10px 0 0 0;
 font-size:13px;
 color:#f3dfe4;
 text-align:center;
-word-break:break-all;
+line-height:1.3;
+max-width:140px;
+word-break:break-word;
 }
 
+.card:nth-of-type(2){
+min-height:220px;
+}
+
+.card:nth-of-type(3){
+padding-bottom:45px;
+}
+   
 </style>
 
 </head>
